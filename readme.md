@@ -11,4 +11,5 @@ terminées, on a une [To Do List](https://github.com/users/xeylou/projects/2) ic
 
 Tu peux créer des tâches en appuyant sur les boutons 'Ajouter un élément' puis les faire glisser dans
 la case suivante si la tâche est en cours d'accomplissement ou terminée. 🥇
-![alt text](image.jpg)
+
+![add_items](add_items.ppg)
