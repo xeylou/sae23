@@ -1,4 +1,4 @@
-> Informations avec Thésée sur la SAÉ 23
+> Informations sur la SAÉ 23 pour Thésée
 
 | Module        | Enseignant       | Fichiers                                                                  |
 | :---          |    :----         |          :---                                                             |
@@ -6,12 +6,12 @@
 
 ## Notes de début
 
-Je t'ai fait une [To Do List](https://github.com/users/xeylou/projects/2/views/1) ici pour réflechir à ce qu'on doit faire et qu'on soit tous les deux au courant, cf ton groupe r209... *Si tu n'aimes pas ou que tu travailles autrement dit-le moi :)*
+Je t'ai fait une [To Do List](https://github.com/users/xeylou/projects/2/views/1) ici pour réflechir à ce qu'on doit faire et qu'on soit tous les deux au courant. Si tu n'aimes pas ou que tu travailles autrement dit-le moi :)*
 
 Tu peux créer des tâches en appuyant sur les boutons 'Ajouter un élément' puis les faire glisser dans
 une autre case si la tâche est en cours ou terminée. 🥇
 
-Je serai sûrement en retard pour le premier TP, est-ce que tu pourrais s'il te plait lire vraiment, vraiment attentivement ce qu'il y a en dessous. On pourra discuter et agencer ce qu'on aura ensuite 🙂
+Je serai sûrement en retard pour le premier TP, est-ce que tu pourrais s'il te plait lire vraiment, vraiment lire attentivement ce qu'il y a en dessous. On pourra discuter et agencer ce qu'on aura ensuite 🙂
 
 ---
 
@@ -27,9 +27,9 @@ Image représentative du sujet :
 
 Je te partage mon interprêtation du sujet avant d'arriver.
 
-Mr. Munier nous demande dans un premier temps d'écrire un programme qui récupère des informations distribuées par un "broker" et de les stocker dans une base de données. Considère un broker comme une machine sur un réseau qui envoie en broadcast *(même si ça serait plus du multicast)* **de manière périodique des données à des abonnées**.
+Mr. Munier nous demande dans un premier temps d'écrire un programme qui récupère des informations distribuées par un "broker" et de les stocker dans une base de données. Considère un broker comme une machine sur un réseau qui envoie de manière périodique des données à des abonnées**.
 
-Imaginons qu'on utilise `Python3` pour ce programme, il récupèrerait ces données à l'aide d'une librairie *(ne t'en fais pas je t'explique dès que je suis là)* et les interprêterait pour les agencer dans une base de données `Sqlite3` par exemple ou en JSON pourquoi pas !
+Imaginons qu'on utilise `Python3` pour ce programme, il récupèrerait ces données à l'aide d'une librairie et les interprêterait pour les agencer dans une base de données `Sqlite3` par exemple ou en JSON pourquoi pas !
 
 Il est précisé que le programme devra aussi *retransmettre les informations*. Si je me base sur le schéma du sujet, je pense qu'il veut parler de la création d'un fichier PDF, une image PNG/JPG ou une page HTML par exemple. *présent sur la partie droite du schéma*.
 
@@ -43,9 +43,9 @@ De mon point de vue, je distingue trois grandes parties pour cette SAÉ :
 
 Il faudrait comprendre comment fonctionne le protocole MQTT, avoir les informations sur les données que le broker envoie périodiquement sans oublier ses informations de connexion (@ip, port, à quelle *topic* on doit s'abonner etc.). On pourra aussi faire des *publish* si on comprend comment le broker est configuré (je laisse ça pour l'instant). Le tout en codant en Python.
 
-La manipulation se rapproche vraiment de l'exportation dans mon sens, cette partie servirait à agencer les données reçues pour mieux les interprêter lors de l'exportation. Je prends l'exemple d'une station météo : imaginons que l'on conserve en plus de la température et de l'humidité l'heure à laquelle les informations sont arrivées. Si on sauvegarde ces données dans une base de données, on pourrait lors de l'export choisir la plage d'heure à laquelle on voudrait ses informations. *(pas sûr que ce soit clair)*
+La manipulation se rapproche vraiment de l'exportation dans mon sens, cette partie servirait à agencer les données reçues pour mieux les interprêter lors de l'exportation. Je prends l'exemple d'une station météo : imaginons que l'on conserve en plus de la température et de l'humidité l'heure à laquelle les informations sont arrivées. Si on sauvegarde ces données dans une base de données, on pourrait lors de l'export choisir la plage d'heure à laquelle on voudrait ses informations.
 
-L'exportation consistera à regrouper certaines informations obtenues et à les exporter dans différents formats. Un programme (Python, PHP...) s'occuperait d'un format (image, page web, pdf etc.). La manipulation ayant déjà trié les informations et stockées, reste plus qu'à les utiliser.
+L'exportation consistera à regrouper certaines informations obtenues et à les exporter dans différents formats. Un programme (Python, PHP...) s'occuperait d'un format (image, page web, pdf etc.). La manipulation ayant déjà trié et stockées les informations, reste plus qu'à utiliser celles qu'on souhaite.
 
 ## Solutions apportées
 
@@ -75,7 +75,7 @@ Je mets ici les attendu de Mr. Munier.
 
 C'était chiant ? 😐
 
-Sérieusement hésitez pas à relire le document un peu attentivement. Si j'ai fait des erreurs dans la compréhension dès le départ ça serait horrible je pense.
+Si j'ai fait des erreurs dans la compréhension dès le départ ça serait horrible je pense.
 
 Merci beaucoup d'avoir lu, vraiment.
 À tout à l'heure !
