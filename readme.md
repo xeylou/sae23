@@ -79,3 +79,11 @@ Si j'ai fait des erreurs dans la compréhension dès le départ ça serait horri
 
 Merci beaucoup d'avoir lu, vraiment.
 À tout à l'heure !
+
+---
+
+1ère séance : "bonjour" & JSON en MQTT
+2ème séance : récupérer & mettre sur DB
+3ème séance : le mettre sur une page simple PHO
+4ème séance : PDF + choses en plus
+5ème séance : évaluation
