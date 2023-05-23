@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+
 ## alexis' contribution to mr. munier code
 
 import json, requests
