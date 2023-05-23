@@ -84,6 +84,6 @@ Merci beaucoup d'avoir lu, vraiment.
 
 1ère séance : "bonjour" & JSON en MQTT
 2ème séance : récupérer & mettre sur DB
-3ème séance : le mettre sur une page simple PHO
+3ème séance : le mettre sur une page simple PHP
 4ème séance : PDF + choses en plus
 5ème séance : évaluation
