@@ -1,11 +1,11 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 
 ## alexis' contribution to mr. munier code
 ##doing it in a function
 
 import json, requests
 
-def json_export(lat, lon):
+def get_info(lat, lon):
     url="https://api.met.no/weatherapi/locationforecast/2.0/compact?lat="+str(lat)+"&lon="+str(lon)
 
     headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0',
@@ -18,9 +18,9 @@ def json_export(lat, lon):
     units = data["properties"]["meta"]["units"]
     weather = data["properties"]["timeseries"][0]["data"]["instant"]["details"]
 
-    json_data=""
+    json_data=[]
     for key in weather.keys():
-        json_data+=("%s = %2.2f %s" %(key, weather[key], units[key])+"\n")
+        json_data.append(weather[key])
     return(json_data)
 
-print(json_export(43.88566272770907, -0.5092243304975015))
+#print(get_info(43.88566272770907, -0.5092243304975015))

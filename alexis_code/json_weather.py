@@ -35,10 +35,3 @@ weather = data["properties"]["timeseries"][0]["data"]["instant"]["details"]
 
 for key in weather.keys():
     print("%s = %2.2f %s" %(key, weather[key], units[key]))
-print("\n")
-
-##adding the output to a variable
-json_data=""
-for key in weather.keys():
-    json_data+=("%s = %2.2f %s" %(key, weather[key], units[key])+"\n")
-print(json_data)
