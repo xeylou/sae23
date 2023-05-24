@@ -8,3 +8,9 @@ CREATE TABLE "weather" (
 	"wind_from_direction"	REAL,
 	"wind_speed"	REAL
 );
+
+# /!\ CREATING DB ONCE IN WRONG PATH AND 
+# CREATING A SECOND ONE IN THE RIGHT ONE
+# AND ONLY USE IT AFTER EVEN IF THE FIRST
+# ONE IS DELETED
+# (or just precise the path like i did?)

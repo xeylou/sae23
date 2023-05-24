@@ -2,7 +2,7 @@
 import sqlite3, datetime, json_weather_function as current_data
 
 ##catching date + if we want 
-##to sort them  it will work
+##to sort them it will work
 date=datetime.datetime.now()
 
 ##catching array of current weather data
