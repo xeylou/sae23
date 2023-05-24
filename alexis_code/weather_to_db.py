@@ -6,9 +6,14 @@ import sqlite3, datetime, json_weather_function as current_data
 date=datetime.datetime.now()
 
 ##catching array of current weather data
-lat=43.88566272770907
-lon=-0.5092243304975015
-results=current_data.get_info(lat, lon)
+try:
+    lat=43.88566272770907
+    lon=-0.5092243304975015
+    results=current_data.get_info(lat, lon)
+    print("catching weather data..."+'\033[32m'+"done"+'\x1b[0m')
+except:
+    print("catching weather data..."+'\033[31m'+"failed"+'\x1b[0m')
+
 
 try:
     ##connection to the db & creating a cursor
@@ -25,8 +30,8 @@ try:
     connection.commit()
     cursor.close()
     connection.close()
-    print("Data commited successfully")
+    print("commit weather data to the db..."+'\033[32m'+"done"+'\x1b[0m')
 
 except sqlite3.Error as error:
-    print("Error when commiting weather data")
+    print("commit weather data to the db..."+'\033[31m'+"failed"+'\x1b[0m')
 
