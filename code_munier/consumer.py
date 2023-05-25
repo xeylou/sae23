@@ -1,18 +1,14 @@
 # python3.6
 
 import random
-
 from paho.mqtt import client as mqtt_client
 
-# --------------------------------------------------
 
 broker = 'test.mosquitto.org'
 port = 1883
-topic = "/foo"
+topic = "/adehutest"
 # generate client ID with pub prefix randomly
 client_id = f'python-mqtt-{random.randint(0, 100)}'
-
-# --------------------------------------------------
 
 def connect_mqtt() -> mqtt_client:
     def on_connect(client, userdata, flags, rc):
@@ -26,8 +22,6 @@ def connect_mqtt() -> mqtt_client:
     client.connect(broker, port)
     return client
 
-# --------------------------------------------------
-
 def subscribe(client: mqtt_client):
     def on_message(client, userdata, msg):
         s = str(msg.payload.decode("utf-8"))
@@ -36,16 +30,12 @@ def subscribe(client: mqtt_client):
     client.subscribe(topic)
     client.on_message = on_message
 
-# --------------------------------------------------
 
 def run():
     client = connect_mqtt()
     subscribe(client)
     client.loop_forever()
 
-# --------------------------------------------------
-
+##if we start python code it run run's function
 if __name__ == '__main__':
     run()
-
-# --------------------------------------------------

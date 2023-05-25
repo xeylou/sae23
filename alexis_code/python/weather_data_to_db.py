@@ -11,13 +11,14 @@ try:
     lon=-0.5092243304975015
     results=current_data.get_info(lat, lon)
     print("catching weather data..."+'\033[32m'+"done"+'\x1b[0m')
+
 except:
     print("catching weather data..."+'\033[31m'+"failed"+'\x1b[0m')
 
-
 try:
     ##connection to the db & creating a cursor
-    db_name="alexis_code/sae23.sqlite"
+    #db_name="alexis_code/sae23.sqlite"
+    db_name="sqlite3/sae23.sqlite"
     connection=sqlite3.connect(db_name)
     cursor=connection.cursor()
 
@@ -32,6 +33,11 @@ try:
     connection.close()
     print("commit weather data to the db..."+'\033[32m'+"done"+'\x1b[0m')
 
+    print('\x1b[6;30;42m'+'success'+'\x1b[0m')
+
 except sqlite3.Error as error:
     print("commit weather data to the db..."+'\033[31m'+"failed"+'\x1b[0m')
+
+
+
 

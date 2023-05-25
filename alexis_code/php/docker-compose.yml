@@ -1,0 +1,10 @@
+version: '3'
+services:
+  php-apache-environment:
+    container_name: php-apache-sae23
+    image: php:8.0-apache
+    volumes:
+      # - ./php/src:/var/www/html/
+      - ./files:/var/www/html/
+    ports:
+      - 8080:80

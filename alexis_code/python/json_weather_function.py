@@ -13,10 +13,10 @@ def get_info(lat, lon):
     
     query=requests.get(url, headers=headers)
     text=query.text
-    data = json.loads(text)
+    data=json.loads(text)
 
-    units = data["properties"]["meta"]["units"]
-    weather = data["properties"]["timeseries"][0]["data"]["instant"]["details"]
+    units=data["properties"]["meta"]["units"]
+    weather=data["properties"]["timeseries"][0]["data"]["instant"]["details"]
 
     json_data=[]
     for key in weather.keys():

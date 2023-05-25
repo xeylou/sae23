@@ -9,7 +9,7 @@ from paho.mqtt import client as mqtt_client
 
 broker = 'test.mosquitto.org'
 port = 1883
-topic = "/foo"
+topic = "/adehutest"
 # generate client ID with pub prefix randomly
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
 
@@ -30,7 +30,7 @@ def connect_mqtt():
 # --------------------------------------------------
 
 def publish(client):
-    time.sleep(1)
+    time.sleep(2)
     
     msg = "bonjour"
     result = client.publish(topic, msg)
