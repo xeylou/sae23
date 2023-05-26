@@ -18,7 +18,7 @@ except:
 try:
     ##connection to the db & creating a cursor
     #db_name="alexis_code/sae23.sqlite"
-    db_path="../php/files/sae23.sqlite"
+    db_path='sae23.sqlite'
     connection=sqlite3.connect(db_path)
     cursor=connection.cursor()
 

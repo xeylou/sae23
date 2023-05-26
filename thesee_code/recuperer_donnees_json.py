@@ -18,4 +18,4 @@ def get_info(lat, lon):
 
     return(data)
 
-print(get_info(43.88566272770907, -0.5092243304975015))
+# print(get_info(43.88566272770907, -0.5092243304975015))
