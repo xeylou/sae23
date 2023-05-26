@@ -33,7 +33,7 @@ try:
     connection.close()
     print("commit weather data to the db..."+'\033[32m'+"done"+'\x1b[0m')
 
-    print('\x1b[6;30;42m'+'success'+'\x1b[0m')
+    print('\x1b[6;30;42m'+'success!'+'\x1b[0m')
 
 except sqlite3.Error as error:
     print("commit weather data to the db..."+'\033[31m'+"failed"+'\x1b[0m')
