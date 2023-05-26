@@ -1,0 +1,39 @@
+pour créer la bdd
+
+ - on crée un fichier binaire ex : bdd.db
+ - on ouvre l'interpréteur sqlite3 avec le fichier précédent
+ - si on fait .table on constate qu'il n'y a rien
+ - on crée les tables avec la requête : 
+ 	CREATE TABLE "weather" (
+		"date"	TEXT NOT NULL,
+		"latitude"	REAL,
+		"longitude"	REAL,
+		"air_temperature"	REAL,
+		"cloud_area_fraction"	REAL,
+		"relative_humidity"	REAL,
+		"wind_from_direction"	REAL,
+		"wind_speed"	REAL
+	);
+ - si on refait .table on trouve la table weather
+ - et voilà
+ 
+ sinon comme dans R207 
+ - on crée un fichier binaire ex : bdd.db
+ - on crée un fichier avec .sqlite ex : table.sqlite
+ - dans celui ci on crée les tables :
+ 	BEGIN TRANSACTION;
+	DROP TABLE IF EXISTS weather;
+	CREATE TABLE "weather" (
+		"date"	TEXT NOT NULL,
+		"latitude"	REAL,
+		"longitude"	REAL,
+		"air_temperature"	REAL,
+		"cloud_area_fraction"	REAL,
+		"relative_humidity"	REAL,
+		"wind_from_direction"	REAL,
+		"wind_speed"	REAL
+	);
+	COMMIT;
+ - ensuite on ouvre l'interpréteur sqlite3 avec le fichier bdd.db
+ - dans le terminal sqlite on lit le fichier contenant la table : .read table.sqlite
+ - c'est ok on peut faire les requêtes
