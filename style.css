@@ -1,0 +1,48 @@
+.masterdiv {
+    height: 10em;
+    position: relative }
+div.masterdiv td,th,thead,tfoot,h1,h3 {
+    margin: 5;
+}
+
+.div1 {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: blueviolet;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+}
+
+.div3 {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #333;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    color: white
+}
+
+table,
+
+thead,
+tfoot {
+    padding-left: 10px;
+    border: 1px solid;
+    background-color: #333;
+    color: #fff;
+    text-align: center
+    
+}
+
+td {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+th {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
