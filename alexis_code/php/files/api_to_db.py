@@ -4,8 +4,6 @@ import sqlite3, datetime, json, requests
 ##catching date + if we want 
 ##to sort them it will work
 date=datetime.datetime.now()
-date1=date.strftime("%m-%d %H")
-
 #print(date.strftime("%m-%d %H"))
 lat=43.88566272770907
 lon=-0.5092243304975015
@@ -35,7 +33,7 @@ cursor=connection.cursor()
 
 cursor.execute(
     "INSERT INTO weather VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-    (date1, lat, lon, results[1], results[2], results[3], results[4], results[5])
+    (date.strftime("%m-%d %H"), lat, lon, results[1], results[2], results[3], results[4], results[5])
 )
 
 ##commit the changes & close connection + cursor
