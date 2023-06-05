@@ -100,7 +100,7 @@ echo'</table>';
 echo'<img src="temperatures.png"/>';
 echo'<img src="humidite.png"/>';
 echo'<br>';
-echo'<a id="download" href="temperatures.png" download="temperatures.png"><button type=submit style="margin-right: 525px; margin-left: 50px;">Télécharger</button></a>';
+echo'<a id="download" href="temperatures.png" download="temperatures.png"><button type=submit style="margin-right: 530px; margin-left: 60px;">Télécharger</button></a>';
 echo'<a id="download" href="humidite.png" download="humidite.png"><button type=submit>Télécharger</button></a>';
 echo'<br><br><br>';
 echo'<input type="button" value="Télécharger le PDF" onclick="window.print();" style="margin-left: 30px;">';
