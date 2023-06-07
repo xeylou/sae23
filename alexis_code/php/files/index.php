@@ -4,9 +4,9 @@ $db=new SQLite3('sae23.sqlite');
 $querry='SELECT * from weather ORDER BY date DESC LIMIT 10';
 $results=$db->query($querry);
 
-$temperature_graph=escapeshellcmd('/alexis_code/php/files/temper_graph.py');
+$temperature_graph=escapeshellcmd('/home/xeylou/Downloads/iut/sae23/alexis_code/php/files/temper_graph.py');
 shell_exec($temperature_graph);
-$humidity_graph=escapeshellcmd('/alexis_code/php/files/humidity_graph.py');
+$humidity_graph=escapeshellcmd('/home/xeylou/Downloads/iut/sae23/alexis_code/php/files/humidity_graph.py');
 shell_exec($humidity_graph);
 
 $temperature_graph=escapeshellcmd('temper_graph.py');
