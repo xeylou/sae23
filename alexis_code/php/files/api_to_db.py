@@ -29,6 +29,7 @@ for key in weather.keys():
     results.append(weather[key])
 ##connection to the db & creating a cursor
 #db_name="alexis_code/sae23.sqlite"
+#db_path='alexis_code/php/files/sae23.sqlite'
 db_path='alexis_code/php/files/sae23.sqlite'
 connection=sqlite3.connect(db_path)
 cursor=connection.cursor()
@@ -45,6 +46,5 @@ connection.close()
 
 subprocess.run(["python", "alexis_code/php/files/temper_graph.py"])
 subprocess.run(["python", "alexis_code/php/files/humidity_graph.py"])
-
-#subprocess.run(["python", "temper_graph.py"])
-#subprocess.run(["python", "humidity_graph.py"])
+subprocess.run(["python", "alexis_code/php/files/tab1.py"])
+subprocess.run(["python", "alexis_code/php/files/tab2.py"])

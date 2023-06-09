@@ -1,3 +1,10 @@
 FROM php:8.0-apache
 RUN docker-php-ext-install sqlite3 && docker-php-ext-enable sqlite3
 RUN apt-get update && apt-get upgrade -y
+
+FROM python:3
+
+WORKDIR /usr/src/app
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt

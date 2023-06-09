@@ -18,7 +18,8 @@ if(isset($_GET['jour'])){
     <select name="jour" id="jours-select" style="margin-right: 10px">
     ';
 
-    $date_query='SELECT DISTINCT date FROM weather ORDER BY date DESC';
+    $date_query='SELECT DISTINCT SUBSTR(date, 1, 5) FROM weather ORDER BY date DESC';
+    #$date_query='SELECT DISTINCT date FROM weather ORDER BY date DESC';
     $res_date=$db->query($date_query);
     while($dates=$res_date->fetchArray()){
         $date_true = explode(" ", $dates[0]);
@@ -58,13 +59,22 @@ if(isset($_GET['jour'])){
         echo'</tr>';
     }
     echo'</table>';
+    $d='<img src="' . $a . '_temperatures.png"/>';
+    echo $d;
+    $b='<img src="' . $a . '_humidite.png"/>';
+    echo $b;
+    echo'<a id="download" href="' . $a . '_temperatures.png" download="' . $a . '_temperatures.png"><button type=submit style="margin-right: 530px; margin-left: 60px;">Télécharger</button></a>';
 
-
-    echo'<img src="temperatures.png"/>';
-    echo'<img src="humidite.png"/>';
+    echo'<a id="download" href="' . $a . '_humidite.png" download="' . $a . '_humidite.png"><button type=submit>Télécharger</button></a>';
+    
     echo'<br>';
-    echo'<a id="download" href="temperatures.png" download="temperatures.png"><button type=submit style="margin-right: 530px; margin-left: 60px;">Télécharger</button></a>';
-    echo'<a id="download" href="humidite.png" download="humidite.png"><button type=submit>Télécharger</button></a>';
+    $c='<img src="' . $a . '_polaire.png"/>';
+    echo $c;
+    echo'<br>';
+
+    echo'<a id="download" href="' . $a . '_polaire.png" download="' . $a . '_polaire.png"><button type=submit style="margin-left: 60px;">Télécharger</button></a>';
+    #echo'<img src="temperatures.png"/>';
+    #echo'<img src="humidite.png"/>';
     echo'<br><br><br>';
     echo'<input type="button" value="Télécharger le PDF" onclick="window.print();" style="margin-left: 30px;">';
 }else{
@@ -83,7 +93,8 @@ echo'
 <select name="jour" id="jours-select" style="margin-right: 10px">
 ';
 
-$date_query='SELECT DISTINCT date FROM weather ORDER BY date DESC';
+$date_query='SELECT DISTINCT SUBSTR(date, 1, 5) FROM weather ORDER BY date DESC';
+#$date_query='SELECT DISTINCT date FROM weather ORDER BY date DESC';
 $res_date=$db->query($date_query);
 while($dates=$res_date->fetchArray()){
     $date_true = explode(" ", $dates[0]);
