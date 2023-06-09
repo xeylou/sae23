@@ -51,45 +51,24 @@ for row in res:
             hu_temp_tab.append(tableau_association_humidite[i][2])
             ws_temp_tab.append(tableau_association_windspeed[i][2])
             wo_temp_tab.append(tableau_association_windspeed[i][2])
-    
-    #tous les tableaux sont créés ici, faut faire les graphs
-
-    #tableau températures
-    fig, ax = plt.subplots()
-    ax.plot(h_temp_tab, t_temp_tab)
-    plt.xticks(rotation = 45)
-    plt.tight_layout()
+    #tableaux thesee
+    vents=[] #orientation du vent en degrès
+    for i in range (len(wo_temp_tab)):
+	    conv = wo_temp_tab[i]*3.14/180
+	    vents.append(conv)
+    polaire=[]
+    for i in range (len(vents)):
+	    polaire.append((vents[i],ws_temp_tab[i]))
+    for i in range (len(polaire)):
+	    plt.polar(polaire[i][0],polaire[i][1],'g.')
+	    #print (polaire[i][0],polaire[i][1])
+    angles = 2*np.pi*np.linspace(0, 1, 9)
+    radDeg = 180/np.pi 
+    etoile = np.array([6, 1, 6, 1, 6, 1, 6, 1, 6])
+    courbes = plt.polar(angles, etoile,'gray')
+    axes = plt.gca()
+    plt.title('Direction et vitesse du vent')
+    axes.set_thetagrids(angles=radDeg*angles[0:-1], labels=("E", "NE", "N", "NO", "O", "SO", "S", "SE"))
     #plt.show()
-    file_name="alexis_code/php/files/" + str(row[0]) + "_temperatures.png"
+    file_name="alexis_code/php/files/" + str(row[0]) + "_polaire.png"
     plt.savefig(file_name)
-
-    #tableau humidité
-    fig, ax = plt.subplots()
-    ax.plot(h_temp_tab, hu_temp_tab)
-    plt.xticks(rotation = 45)
-    plt.tight_layout()
-    #plt.show()
-    file_name="alexis_code/php/files/" + str(row[0]) + "_humidite.png"
-    plt.savefig(file_name)
-
-
-
-    #print(f"Tableaux des températures du jour {row[0]} : \nHeures : {h_temp_tab}\nTempératures : {t_temp_tab}\nHumidité : {hu_temp_tab}\nOrientation du vent : {wo_temp_tab}\nVitesse du vent : {ws_temp_tab}\n")
-
-
-
-#print(tableau_des_jours)
-
-
-        # temp_tab_t=[]
-        # for row2 in res2:
-        #     if row2[0] in row[0]:
-        #         temp_tab_t.append(row2[2])
-        # print(temp_tab_t)
-
-
-
-
-
-
-con.close()

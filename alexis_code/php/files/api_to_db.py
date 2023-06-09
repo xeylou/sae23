@@ -46,5 +46,10 @@ connection.close()
 
 subprocess.run(["python", "alexis_code/php/files/temper_graph.py"])
 subprocess.run(["python", "alexis_code/php/files/humidity_graph.py"])
-subprocess.run(["python", "alexis_code/php/files/tab1.py"])
-subprocess.run(["python", "alexis_code/php/files/tab2.py"])
+subprocess.run(["python", "alexis_code/php/files/cloud_area_graph.py"])
+
+
+subprocess.run(["python", "alexis_code/php/files/humidite_temperature_individuel.py"])
+subprocess.run(["python", "alexis_code/php/files/polaire_individuel.py"])
+subprocess.run(["python", "alexis_code/php/files/clous_area_individual.py"])
+

@@ -32,5 +32,10 @@ fig, ax = plt.subplots() # subplots est un tuple avec fig qui correspond au dess
 ax.plot(date, air_temperature) # on ajoute les valeurs de nos tableaux \u00e0 ax
 plt.title('Humidité')
 plt.xticks(rotation = 45)
+
+
+ax.set_ylabel("Taux d'humidité (en %)")
+ax.set_xlabel('Date et heure')
 plt.tight_layout()
-plt.savefig("alexis_code/php/files/humidite.png") # on fait afficher le graphe
+
+plt.savefig("alexis_code/php/files/humidite.png", bbox_inches='tight') # on fait afficher le graphe
