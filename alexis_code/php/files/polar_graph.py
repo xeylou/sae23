@@ -21,7 +21,7 @@ for row in res:
 
 
 plt.axes(projection = 'polar')
-plt.title("Direction et vitesse des vents")
+plt.title("Direction et vitesse des vents (en m/s)")
 
 
 vents = []
@@ -34,15 +34,19 @@ polaire=[]
 for i in range (len(vents)):
 	polaire.append((vents[i],speed[i]))
 
-for i in range (len(polaire)):
+for i in range (len(polaire)-1):
 	plt.polar(polaire[i][0],polaire[i][1],'g.')
 	print (polaire[i][0],polaire[i][1])
+i2=len(polaire)-1
+#plt.polar(polaire[i2][0],polaire[i2][1],'g.', label = 'Vitesse du vent\npour sa direction')
+plt.polar(polaire[i2][0],polaire[i2][1],'g.')
 
 angles = 2*np.pi*np.linspace(0, 1, 9)
 radDeg = 180/np.pi 
 etoile = np.array([6, 1, 6, 1, 6, 1, 6, 1, 6])
 courbes = plt.polar(angles, etoile,'gray')
 
+#plt.legend()
 axes = plt.gca()
 axes.set_thetagrids(angles=radDeg*angles[0:-1], labels=("E", "NE", "N", "NO", "O", "SO", "S", "SE"))
 

@@ -67,7 +67,7 @@ for row in res:
     etoile = np.array([6, 1, 6, 1, 6, 1, 6, 1, 6])
     courbes = plt.polar(angles, etoile,'gray')
     axes = plt.gca()
-    plt.title('Direction et vitesse du vent')
+    plt.title('Direction et vitesse du vent de'+str(row[0]))
     axes.set_thetagrids(angles=radDeg*angles[0:-1], labels=("E", "NE", "N", "NO", "O", "SO", "S", "SE"))
     #plt.show()
     file_name="alexis_code/php/files/" + str(row[0]) + "_polaire.png"
