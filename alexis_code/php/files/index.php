@@ -43,7 +43,7 @@ if(isset($_GET['jour'])){
     <th scope="col">Latitude</th>
     <th scope="col">Longitude</th>
     <th scope="col">Température</th>
-    <th scope="col">Recouvrement nuageux</th>
+    <th scope="col">Couverture nuageuse</th>
     <th scope="col">Humidité</th>
     <th scope="col">Direction du vent</th>
     <th scope="col">Vitesse du vent</th>
@@ -87,6 +87,7 @@ if(isset($_GET['jour'])){
 
 $db=new SQLite3('sae23.sqlite');
 $querry='SELECT * from weather ORDER BY date DESC LIMIT 9';
+#$querry='SELECT * from weather ORDER BY date DESC';
 $results=$db->query($querry);
 
 echo'<h1>OpenWeather Data : (Python, PHP, MQTT, SQlite)</h1>';
@@ -120,7 +121,7 @@ echo'<tr>
 <th scope="col">Latitude</th>
 <th scope="col">Longitude</th>
 <th scope="col">Température</th>
-<th scope="col">Recouvrement nuageux</th>
+<th scope="col">Couverture nuageuse</th>
 <th scope="col">Humidité</th>
 <th scope="col">Direction du vent</th>
 <th scope="col">Vitesse du vent</th>

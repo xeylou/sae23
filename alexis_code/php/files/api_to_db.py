@@ -12,7 +12,8 @@ lon=-0.5092243304975015
 
 ##catching array of current weather data
 # results=get_info(lat, lon)
-url="https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=43.88566272770907&lon=0.5092243304975015"
+#
+url="https://api.met.no/weatherapi/locationforecast/2.0/compact?lat="+str(lat)+"&lon="+str(lon)
 
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0',
         'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache', 'Expires': '0'}
@@ -46,12 +47,12 @@ connection.commit()
 cursor.close()
 connection.close()
 
-subprocess.run(["python", "alexis_code/php/files/temper_graph.py"])
+subprocess.run(["python", "alexis_code/php/files/tempererature_graph.py"])
 subprocess.run(["python", "alexis_code/php/files/humidity_graph.py"])
-subprocess.run(["python", "alexis_code/php/files/cloud_area_graph.py"])
+subprocess.run(["python", "alexis_code/php/files/cloud_area_fraction_graph.py"])
+subprocess.run(["python", "alexis_code/php/files/wind_graph.py"])
 
-
-subprocess.run(["python", "alexis_code/php/files/humidite_temperature_individuel.py"])
-subprocess.run(["python", "alexis_code/php/files/polaire_individuel.py"])
-subprocess.run(["python", "alexis_code/php/files/clous_area_individual.py"])
+subprocess.run(["python", "alexis_code/php/files/humidity_temperature_individual_graph.py"])
+subprocess.run(["python", "alexis_code/php/files/cloud_area_fraction_individual_graph.py"])
+subprocess.run(["python", "alexis_code/php/files/wind_individual_graph.py"])
 

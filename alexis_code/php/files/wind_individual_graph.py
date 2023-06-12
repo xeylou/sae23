@@ -74,7 +74,7 @@ for row in res:
     #plt.title('Direction et vitesse du vent de'+str(row[0]))
     plt.title('Direction et vitesse du vent du '  + str(row[0]))
     axes.set_thetagrids(angles=radDeg*angles[0:-1], labels=("E", "NE", "N", "NO", "O", "SO", "S", "SE"))
-    #plt.show()
 
     file_name="alexis_code/php/files/" + str(row[0]) + "_polaire.png"
     plt.savefig(file_name)
+    #plt.show()
