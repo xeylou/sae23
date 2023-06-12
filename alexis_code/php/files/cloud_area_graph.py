@@ -29,12 +29,17 @@ tuple = (date,cloud_area_fraction)
 
 fig, ax = plt.subplots() 
 ax.plot(date, cloud_area_fraction)
-plt.title('Recouvrement des nuages')
-plt.xticks(rotation = 45)
+plt.title('Couverture nuageuse')
+# plt.xticks(rotation = 45)
+plt.xticks(rotation = 'vertical')
+
 plt.tight_layout()
 ax.fill_between(date, cloud_area_fraction, alpha=0.7)
-ax.set_ylabel('Couverture des nuages (en %)')
+ax.set_ylabel('Nébulosité (en %)')
 ax.set_xlabel('Date et heure')
+#plt.xticks([]) # retire graduation en x
+ax.xaxis.set_tick_params(labelsize=6)
+
 
 plt.savefig("alexis_code/php/files/cloud_area_fraction.png", bbox_inches='tight') # on fait afficher le graphe
 #plt.show()

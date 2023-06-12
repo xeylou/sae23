@@ -30,12 +30,15 @@ for row in res:			# pour toutes les dates
     requete = "SELECT * FROM weather WHERE date LIKE '" + str(row[0]) + "%';"
     cur.execute(requete)
     res2 = cur.fetchall()
-    #print(f"exemple de {res2}")
+    # print(f"exemple de {res2}")
     for row2 in res2:
         tableau_association_temperatures.append((row[0], row2[0], row2[3]))
         tableau_association_humidite.append((row[0], row2[0], row2[5]))
         tableau_association_windspeed.append((row[0], row2[0], row2[7]))
+        #print(row2[6])
         tableau_association_windorientation.append((row[0], row2[0], row2[6]))
+        #tableau_association_windorientation.append((row[0], row2[0], row2[5]))
+
     #print(f"fin de tableau association temp {tableau_association_temperatures}")
 
 for row in res:
@@ -50,12 +53,13 @@ for row in res:
             h_temp_tab.append(tableau_association_temperatures[i][1])
             hu_temp_tab.append(tableau_association_humidite[i][2])
             ws_temp_tab.append(tableau_association_windspeed[i][2])
-            wo_temp_tab.append(tableau_association_windspeed[i][2])
+            wo_temp_tab.append(tableau_association_windorientation[i][2])
+            #print(tableau_association_windspeed[i][2])
     #tableaux thesee
     vents=[] #orientation du vent en degrès
     for i in range (len(wo_temp_tab)):
-	    conv = wo_temp_tab[i]*3.14/180
-	    vents.append(conv)
+        conv = wo_temp_tab[i]*3.14/180
+        vents.append(conv)
     polaire=[]
     for i in range (len(vents)):
 	    polaire.append((vents[i],ws_temp_tab[i]))
@@ -67,8 +71,10 @@ for row in res:
     etoile = np.array([6, 1, 6, 1, 6, 1, 6, 1, 6])
     courbes = plt.polar(angles, etoile,'gray')
     axes = plt.gca()
-    plt.title('Direction et vitesse du vent de'+str(row[0]))
+    #plt.title('Direction et vitesse du vent de'+str(row[0]))
+    plt.title('Direction et vitesse du vent du '  + str(row[0]))
     axes.set_thetagrids(angles=radDeg*angles[0:-1], labels=("E", "NE", "N", "NO", "O", "SO", "S", "SE"))
     #plt.show()
+
     file_name="alexis_code/php/files/" + str(row[0]) + "_polaire.png"
     plt.savefig(file_name)

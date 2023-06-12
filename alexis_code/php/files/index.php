@@ -9,7 +9,7 @@ if(isset($_GET['jour'])){
 
 
     echo'<h1>OpenWeather Data : (Python, PHP, MQTT, SQlite)</h1>';
-    echo"<h3>Les données demandées seront présentées sous forme d'un tableau puis sous forme de graphiques.</h3>";
+    echo"<h3>Les données demandées sont présentées sous la forme d'un tableau puis sous la forme de graphiques.</h3>";
 
     echo'
     <b>Changement de la date :</b>
@@ -43,7 +43,7 @@ if(isset($_GET['jour'])){
     <th scope="col">Latitude</th>
     <th scope="col">Longitude</th>
     <th scope="col">Température</th>
-    <th scope="col">Recouvrement des nuages</th>
+    <th scope="col">Recouvrement nuageux</th>
     <th scope="col">Humidité</th>
     <th scope="col">Direction du vent</th>
     <th scope="col">Vitesse du vent</th>
@@ -90,7 +90,7 @@ $querry='SELECT * from weather ORDER BY date DESC LIMIT 9';
 $results=$db->query($querry);
 
 echo'<h1>OpenWeather Data : (Python, PHP, MQTT, SQlite)</h1>';
-echo"<h3>Les données demandées seront présentées sous forme d'un tableau puis sous forme de graphiques.</h3>";
+echo"<h3>Les données demandées sont présentées sous la forme d'un tableau puis sous la forme de graphiques.</h3>";
 
 echo'
 <b>Changement de la date :</b>
@@ -120,7 +120,7 @@ echo'<tr>
 <th scope="col">Latitude</th>
 <th scope="col">Longitude</th>
 <th scope="col">Température</th>
-<th scope="col">Recouvrement des nuages</th>
+<th scope="col">Recouvrement nuageux</th>
 <th scope="col">Humidité</th>
 <th scope="col">Direction du vent</th>
 <th scope="col">Vitesse du vent</th>

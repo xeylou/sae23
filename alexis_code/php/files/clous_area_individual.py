@@ -61,11 +61,11 @@ for row in res:
     #tableau températures
     fig, ax = plt.subplots()
     ax.plot(h_temp_tab, c_temp_tab)
-    plt.title('Recouvrement des nuages')
+    plt.title('Couverture nuageuse du ' + str(row[0]))
     plt.xticks(rotation = 45)
     plt.tight_layout()
     ax.fill_between(h_temp_tab, c_temp_tab, alpha=0.7)
-    ax.set_ylabel('Couverture des nuages (en %)')
+    ax.set_ylabel('Nébulosité (en %)')
     ax.set_xlabel('Date et heure')
     #plt.show()
     file_name="alexis_code/php/files/" + str(row[0]) + "_cloud_area_fraction.png"

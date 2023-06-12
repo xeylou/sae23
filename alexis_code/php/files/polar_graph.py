@@ -28,6 +28,7 @@ vents = []
 
 for i in range (len(tab)):
 	conv = tab[i]*3.14/180
+	print(conv)
 	vents.append(conv)
 	
 polaire=[]

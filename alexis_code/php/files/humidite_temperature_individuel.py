@@ -57,7 +57,7 @@ for row in res:
     #tableau températures
     fig, ax = plt.subplots()
     ax.plot(h_temp_tab, t_temp_tab)
-    plt.title('Températures')
+    plt.title('Températures du ' + str(row[0]))
     plt.xticks(rotation = 45)
     plt.tight_layout()
     #plt.show()
@@ -69,7 +69,7 @@ for row in res:
     #tableau humidité
     fig, ax = plt.subplots()
     ax.plot(h_temp_tab, hu_temp_tab)
-    plt.title('Humidité')
+    plt.title('Humidité du ' + str(row[0]))
     plt.xticks(rotation = 45)
     plt.tight_layout()
     #plt.show()

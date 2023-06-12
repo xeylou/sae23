@@ -24,6 +24,7 @@ data=json.loads(text)
 units=data["properties"]["meta"]["units"]
 weather=data["properties"]["timeseries"][0]["data"]["instant"]["details"]
 
+
 results=[]
 for key in weather.keys():
     results.append(weather[key])
@@ -33,6 +34,7 @@ for key in weather.keys():
 db_path='alexis_code/php/files/sae23.sqlite'
 connection=sqlite3.connect(db_path)
 cursor=connection.cursor()
+
 
 cursor.execute(
     "INSERT INTO weather VALUES (?, ?, ?, ?, ?, ?, ?, ?)",

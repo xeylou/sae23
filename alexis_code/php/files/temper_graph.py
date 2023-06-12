@@ -31,11 +31,14 @@ tuple = (date,air_temperature)
 fig, ax = plt.subplots() # subplots est un tuple avec fig qui correspond au dessin et ax aux valeurs
 ax.plot(date, air_temperature) # on ajoute les valeurs de nos tableaux \u00e0 ax
 plt.title('Températures')
-plt.xticks(rotation = 45)
+#plt.xticks(rotation = 45)
+plt.xticks(rotation = 'vertical')
 
 
 ax.set_ylabel('Température (en °C)')
 ax.set_xlabel('Date et heure')
 plt.tight_layout()
+#plt.xticks([]) # retire graduation en x
+ax.xaxis.set_tick_params(labelsize=6)
 
 plt.savefig("alexis_code/php/files/temperatures.png", bbox_inches='tight') # on fait afficher le graphe
